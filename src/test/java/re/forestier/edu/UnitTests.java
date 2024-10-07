@@ -81,17 +81,24 @@ public class UnitTests {
     void testNegativeMoney() {
         player p = new player("Florian", "Grognak le barbare", "!ADVENTURER!ARCHER!DWARF", 100, new ArrayList<>());
 
+
         p = new player("Florian", "Grognak le barbare", "ADVENTURER", 100, new ArrayList<>());
         p.addMoney(100);
-        p.removeMoney(10);
+        int amount = 0;
+        p.removeMoney(amount);
+        assertThat(p.money-amount<0, is(false));
         UpdatePlayer.addXp(p,58);
+        assertThat(p.getXp()<58 && p.getXp()>=27,is(false));
         UpdatePlayer.addXp(p,54);
-        p.getXp();
+        assertThat(p.getXp()<112 && p.getXp()>=57,is(false));
+
 
 
 
         try {
             p.removeMoney(300);
+            amount=300;
+            assertThat(p.money-amount<0, is(true));
         } catch (IllegalArgumentException e) {
             return;
         }
