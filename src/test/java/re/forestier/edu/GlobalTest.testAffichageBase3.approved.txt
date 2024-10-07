@@ -8,3 +8,4 @@ CapacitÃ©s :
    INT : 2
 
 Inventaire :
+   abdelali ichou
