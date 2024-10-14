@@ -134,8 +134,6 @@ public class UpdatePlayer {
                         player.currenthealthpoints+=1;
                     }
                     player.currenthealthpoints+=1;
-                } else if(player.getAvatarClass().equals("ADVENTURER")) {
-                    player.currenthealthpoints+=2;
                 }
 
 
@@ -150,11 +148,6 @@ public class UpdatePlayer {
                 if(player.retrieveLevel() < 3) {
                     player.currenthealthpoints-=1;
                 }
-            }
-        } else if(player.currenthealthpoints >= player.healthpoints/2){
-            if(player.currenthealthpoints >= player.healthpoints) {
-                player.currenthealthpoints = player.healthpoints;
-                return;
             }
         }
 
